@@ -1,0 +1,14 @@
+# Loon remote rules: YouTube-HK
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN,youtubei.googleapis.com
+DOMAIN,youtube.googleapis.com
+DOMAIN,yt3.ggpht.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtube-nocookie.com
+DOMAIN-SUFFIX,youtu.be
+DOMAIN-SUFFIX,yt.be
+DOMAIN-SUFFIX,youtubekids.com
+DOMAIN-SUFFIX,gvt2.com

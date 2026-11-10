@@ -1,0 +1,8 @@
+# Loon remote rules: TikTok-TW
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,musical.ly
+DOMAIN-SUFFIX,byteoversea.com

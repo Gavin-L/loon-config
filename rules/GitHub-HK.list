@@ -1,0 +1,8 @@
+# Loon remote rules: GitHub-HK
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,ghcr.io

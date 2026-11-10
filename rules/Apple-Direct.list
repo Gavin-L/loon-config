@@ -1,0 +1,10 @@
+# Loon remote rules: Apple-Direct
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,me.com
+DOMAIN-SUFFIX,itunes.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN-SUFFIX,apple-cloudkit.com

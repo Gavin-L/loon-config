@@ -1,0 +1,21 @@
+[Remote Rule]
+# GitHub jsDelivr: use these resources in this order; these files carry no airport credentials.
+# Windows update and critical work domains remain protected by LOCAL [Rule].
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Microsoft-HK.list,policy=香港节点,tag=GitHub-Microsoft-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/YouTube-HK.list,policy=香港节点,tag=GitHub-YouTube-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/AI-JP.list,policy=日本节点,tag=GitHub-AI-JP,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Google-US.list,policy=美国节点,tag=GitHub-Google-US,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/GitHub-HK.list,policy=香港节点,tag=GitHub-GitHub-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Social-HK.list,policy=香港节点,tag=GitHub-Social-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Telegram-JP.list,policy=日本节点,tag=GitHub-Telegram-JP,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Japan-JP.list,policy=日本节点,tag=GitHub-Japan-JP,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Spotify-US.list,policy=美国节点,tag=GitHub-Spotify-US,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/TikTok-TW.list,policy=台湾节点,tag=GitHub-TikTok-TW,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Streaming-HK.list,policy=香港节点,tag=GitHub-Streaming-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Finance-Direct.list,policy=DIRECT,tag=GitHub-Finance-Direct,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Apple-Direct.list,policy=DIRECT,tag=GitHub-Apple-Direct,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Other-HK.list,policy=香港节点,tag=GitHub-Other-HK,enabled=true
+https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/rules/Ads-Reject.list,policy=REJECT,tag=GitHub-Ads-Reject,enabled=true
+# Further generic remote lists come AFTER platform-specific lists
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list,policy=DIRECT,tag=China-Direct,enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list,policy=海外服务,tag=Global-Proxy,enabled=true

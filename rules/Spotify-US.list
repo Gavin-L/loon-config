@@ -1,0 +1,9 @@
+# Loon remote rules: Spotify-US
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,spoti.fi

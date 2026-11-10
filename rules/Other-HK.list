@@ -1,0 +1,9 @@
+# Loon remote rules: Other-HK
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN-SUFFIX,gitlab.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,notion.site
+DOMAIN-SUFFIX,notionusercontent.com
+DOMAIN-SUFFIX,figma.com
+DOMAIN,p14-buy.itunes.apple.com

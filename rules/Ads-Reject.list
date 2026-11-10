@@ -1,0 +1,7 @@
+# Loon remote rules: Ads-Reject
+# GitHub source: Gavin-L/loon-config
+# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+DOMAIN,g.doubleclick.net
+DOMAIN,googleads.g.doubleclick.net
+DOMAIN,pagead2.googlesyndication.com
+DOMAIN,ads.youtube.com

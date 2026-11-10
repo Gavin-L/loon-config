@@ -1,6 +1,6 @@
 # Loon config (public template)
 
-Public Loon v3.1 profile **template** for `Gavin-L/loon-config`.
+Public Loon **v3.3** profile template for `Gavin-L/loon-config`, updated **in place at the stable `Loon.conf` URL**. All original 32 enabled plugins and anti-tracking/REJECT remote rules were restored.
 
 ## Routing goals
 
@@ -38,3 +38,9 @@ The Raw URL points to the public **template**, which has no operational node sub
 ## Source
 
 Based on `Loon_AutoRegion_LowRate_MicrosoftHK_v3.1.conf`, 2026-11-10. Static check only, not a live Loon validation or real IP geolocation verification.
+
+## Permanent subscription URL
+
+Keep using `https://cdn.jsdelivr.net/gh/Gavin-L/loon-config@main/Loon.conf`. Edit this same file on GitHub to publish updates; managed Loon profile subscriptions can refresh it. CDN updates can be delayed by cache.
+
+**Important:** the public managed profile excludes your private airport subscription and MITM CA. If your active profile depends on private subscription URLs, refreshing this public profile can remove locally added subscription settings. Prefer **one local operational profile** with subscription secrets stored only on-device, and GitHub `rules/*.list` remote-rule subscriptions for frequent no-reimport updates. See `GITHUB-SETUP.md` and `ADBLOCK-RESTORE.md`. The stable URL works as a public template, not a complete private working VPN profile.

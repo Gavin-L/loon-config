@@ -1,0 +1,13 @@
+# Private profiles and credentials
+*private*.conf
+*local*.conf
+*.p12
+*.pfx
+*.pem
+*.key
+*.mobileconfig
+*.env
+.env*
+secrets.*
+*.token
+.DS_Store

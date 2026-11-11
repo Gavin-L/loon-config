@@ -1,9 +1,9 @@
-# TikTok regional routing: Taiwan (TW); Hong Kong is NOT a target.
+# TikTok domain rules (legacy filename TikTok-TW.list; actual client route: Singapore SG).
 # Shared by Loon, CordC and Clash Verge; policy assigned in client:
-# Loon = 台湾节点; Windows = LoonWin-TW-AUTO.
+# Loon = 新加坡节点; Windows = LoonWin-SG-AUTO.
 # Reference: blackmatrix7/ios_rule_script TikTok domain list, selectively scoped to TikTok.
 # Some infrastructure domains are shared with other ByteDance services; use connection logs to verify.
-# Update: 2026-11-11
+# Updated: 2026-11-11; filename kept for compatibility.
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokcdn.com
 DOMAIN-SUFFIX,tiktokcdn-us.com

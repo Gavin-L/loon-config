@@ -43,3 +43,9 @@
 如果在日志中见到 `s.bingparachute.com` 或 `t.bingparachute.com` 命中机场旧 `GeoSite/microsoft` 或旧 `微软服务/微軟服務`，请把本目录最新版 `Clash-Verge-Global-Script.js` 重新粘贴到 **全局扩展脚本**（一次性）。新版将原机场 Microsoft GeoSite 和旧微软组指向 `LoonWin-HK-AUTO`，保留其他机场组。原 `rules/Microsoft-HK.list` 也新增了 Bing parachute/内部域名，远程规则刷新后会加载。
 
 操作后在日志搜索 `bingparachute` 和 `r.bing.com`，预期使用 `LoonWin-HK-AUTO`。请核对最终节点可用，旧组造成的连接超时通常会消失，但香港池自身节点失效时仍可能超时。Bing 网页显示的国家/地区也由账户、Cookie、定位等设置决定，并非代理策略直接决定。
+
+## TikTok 地区设置（2026-11-11）
+
+TikTok 已改为 **新加坡**自动节点池 `LoonWin-SG-AUTO`，优先同地区低倍率节点；不可用时回退同地区备用节点。共享规则集的文件名 `TikTok-TW.list` 保持不变以兼容 Loon 原有订阅，但 **Windows 中实际策略已指向新加坡**。
+
+本次更新修改了 JavaScript 脚本，因此需要在客户端 **重新通过 URL 导入最新版脚本并重新加载配置**；单独刷新远程规则集不能变更策略组目标。后续只调整 TikTok 匹配域名时，可继续通过 `rules/TikTok-TW.list` 自动更新。

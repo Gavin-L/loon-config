@@ -1,6 +1,7 @@
 /**
  * Clash Verge Rev / Mihomo global extension script.
  * Public, no subscriptions or credentials. Compatible with active profiles.
+ * 2026-11-11: unify provider Microsoft GeoSite with our HK group.
  * Keep in: Profiles > Global Extension Script (not Merge).
  * Source: https://github.com/Gavin-L/loon-config
  */
@@ -147,12 +148,18 @@ function main(config, profileName) {
   }));
   ownRules.push("DOMAIN-SUFFIX,cn,DIRECT");
   ownRules.push("GEOIP,CN,DIRECT,no-resolve");
+  // Airport GeoSite/Microsoft rules are redirected to our Hong Kong auto-pool.
+  // Our custom rules stay first, so AI/ads/download exceptions keep their priority.
+  ownRules.push("GEOSITE,microsoft,"+groupName("HK"));
   var originalRules=Array.isArray(config.rules)?config.rules:[];
   var otherRules=originalRules.filter(function(rule){
     if (typeof rule!=="string") return false;
     if (/^MATCH,|^FINAL,/i.test(rule)) return false;
     if (/^RULE-SET,LoonWin-/i.test(rule)) return false;
+    if (/^GEOSITE,\s*microsoft\s*,/i.test(rule)) return false;
     return ownRules.indexOf(rule)<0;
+  }).map(function(rule){
+    return rule.replace(/,(?:微软服务|微軟服務|Microsoft服务|Microsoft服務)\s*(?=,|$)/i, ","+groupName("HK"));
   });
   config.rules=ownRules.concat(otherRules,["MATCH,"+groupName("HK")]);
   // Never touch subscription URLs, proxy definitions, DNS or user credentials.

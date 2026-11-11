@@ -4,6 +4,9 @@
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bing.net
 DOMAIN-SUFFIX,bingapis.com
+DOMAIN-SUFFIX,bingparachute.com
+DOMAIN-SUFFIX,bing-int.com
+DOMAIN-SUFFIX,staging-bing-int.com
 DOMAIN-SUFFIX,bing.cn
 DOMAIN-SUFFIX,bing.com.cn
 DOMAIN-SUFFIX,microsoft.com

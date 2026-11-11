@@ -3,6 +3,7 @@
  * Public, no subscriptions or credentials. Compatible with active profiles.
  * 2026-11-11: unify provider Microsoft GeoSite with our HK group.
  * CordC runtime support must be checked in-app before replacing Clash Verge.
+ * TikTok traffic uses Singapore auto regional pool (TikTok-TW is legacy file name).
  * Paste into CordC Settings > Advanced > Script editor; associate with active profile when required.
  * Source: https://github.com/Gavin-L/loon-config
  */
@@ -101,7 +102,7 @@ const main = (config) => {
     ["Telegram-JP",groupName("JP")],
     ["Japan-JP",groupName("JP")],
     ["Spotify-US",groupName("US")],
-    ["TikTok-TW",groupName("TW")],
+    ["TikTok-TW",groupName("SG")],
     ["Streaming-HK",groupName("HK")],
     ["Other-HK",groupName("HK")]
   ];

@@ -37,3 +37,9 @@
 - 如果出现保存脚本失败或代理组无节点，在软件内查看脚本错误和「运行时订阅/运行时配置」。确认机场节点名称的地区和倍率格式。
 - 由客户端 GUI 接管的端口、TUN、DNS 覆写等设置应在软件界面管理，本脚本不修改它们。
 - 不要把任何私人机场 URL/Token 粘贴到 GitHub。
+
+## 微软分流重叠修复（2026-11-11）
+
+如果在日志中见到 `s.bingparachute.com` 或 `t.bingparachute.com` 命中机场旧 `GeoSite/microsoft` 或旧 `微软服务/微軟服務`，请把本目录最新版 `Clash-Verge-Global-Script.js` 重新粘贴到 **全局扩展脚本**（一次性）。新版将原机场 Microsoft GeoSite 和旧微软组指向 `LoonWin-HK-AUTO`，保留其他机场组。原 `rules/Microsoft-HK.list` 也新增了 Bing parachute/内部域名，远程规则刷新后会加载。
+
+操作后在日志搜索 `bingparachute` 和 `r.bing.com`，预期使用 `LoonWin-HK-AUTO`。请核对最终节点可用，旧组造成的连接超时通常会消失，但香港池自身节点失效时仍可能超时。Bing 网页显示的国家/地区也由账户、Cookie、定位等设置决定，并非代理策略直接决定。

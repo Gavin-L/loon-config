@@ -1,8 +1,25 @@
-# Loon remote rules: TikTok-TW
-# GitHub source: Gavin-L/loon-config
-# Two-column syntax: policy is assigned in [Remote Rule] of your private local config.
+# TikTok regional routing: Taiwan (TW); Hong Kong is NOT a target.
+# Shared by Loon, CordC and Clash Verge; policy assigned in client:
+# Loon = 台湾节点; Windows = LoonWin-TW-AUTO.
+# Reference: blackmatrix7/ios_rule_script TikTok domain list, selectively scoped to TikTok.
+# Some infrastructure domains are shared with other ByteDance services; use connection logs to verify.
+# Update: 2026-11-11
 DOMAIN-SUFFIX,tiktok.com
 DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,tiktokcdn-us.com
 DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-SUFFIX,tiktokv.us
+DOMAIN-SUFFIX,tiktokd.net
+DOMAIN-SUFFIX,tiktokd.org
+DOMAIN-SUFFIX,tiktokmusic.app
+DOMAIN-SUFFIX,tik-tokapi.com
 DOMAIN-SUFFIX,musical.ly
+DOMAIN-SUFFIX,muscdn.com
 DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,byteintlapi.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,ttwebview.com
+DOMAIN,lf16-effectcdn.byteeffecttos-g.com
+DOMAIN,p16-tiktokcdn-com.akamaized.net
+DOMAIN-KEYWORD,tiktok

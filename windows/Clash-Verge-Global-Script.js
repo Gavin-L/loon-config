@@ -100,7 +100,7 @@ function main(config, profileName) {
     ["Telegram-JP",groupName("JP")],
     ["Japan-JP",groupName("JP")],
     ["Spotify-US",groupName("US")],
-    ["TikTok-TW",groupName("TW")],
+    ["TikTok-TW",groupName("SG")],
     ["Streaming-HK",groupName("HK")],
     ["Other-HK",groupName("HK")]
   ];

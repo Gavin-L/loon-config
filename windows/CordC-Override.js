@@ -119,7 +119,9 @@ const main = (config) => {
   });
 
   // Critical exceptions are placed above Microsoft & advertising catch-alls.
+  // PT downloading: qBittorrent DIRECT, before all domain rules.
   var protect=[
+    "PROCESS-NAME,qbittorrent.exe,DIRECT",
     "DOMAIN-SUFFIX,upwork.com,DIRECT",
     "DOMAIN-SUFFIX,upwork.net,DIRECT",
     "DOMAIN-SUFFIX,labelbox.com,DIRECT",

@@ -8,7 +8,7 @@
 2. 打开「订阅」→「全局扩展脚本（Script）」，复制 [Clash-Verge-Global-Script.js](./Clash-Verge-Global-Script.js) 的全部内容并保存。
 3. 让脚本生效：必要时重新启用订阅或重启代理核心。选择「规则」模式（Rule）。
 4. 到「代理」页面查看 LoonWin-HK-AUTO / LoonWin-JP-AUTO / LoonWin-US-AUTO 等策略组。
-5. 验证分流：ChatGPT→JP、Microsoft/Bing→HK、YouTube/GitHub/Discord→HK、Google/Spotify→US、国内→DIRECT。
+5. 验证分流：ChatGPT→JP、Microsoft/Bing→US、YouTube/GitHub/Discord→HK、Google/Spotify→US、国内→DIRECT。
 6. 「规则」页面可检查命中记录。若某个地区没有节点，会用 REJECT 而非偷偷跨区。
 
 **你可以在同一软件保留 CordCloud 和另一机场订阅。** 全局脚本在当前启用的订阅上工作，**不会把两个独立订阅自动混成一个节点池**。若需要真正合并双机场节点，需要以后单独建立 proxy-providers 汇总配置。
@@ -49,3 +49,7 @@
 TikTok 已改为 **新加坡**自动节点池 `LoonWin-SG-AUTO`，优先同地区低倍率节点；不可用时回退同地区备用节点。共享规则集的文件名 `TikTok-TW.list` 保持不变以兼容 Loon 原有订阅，但 **Windows 中实际策略已指向新加坡**。
 
 本次更新修改了 JavaScript 脚本，因此需要在客户端 **重新通过 URL 导入最新版脚本并重新加载配置**；单独刷新远程规则集不能变更策略组目标。后续只调整 TikTok 匹配域名时，可继续通过 `rules/TikTok-TW.list` 自动更新。
+
+## Microsoft 改走美国地区（2026-11-18）
+
+`LoonWin-Microsoft-US` 规则集现在全部指向 `LoonWin-US-AUTO`；原机场 `GEOSITE,microsoft` 和旧微软服务策略组也统一映射美国节点。Windows 更新和微软下载亦走美国，可能增加代理流量消耗。上文 HK 修复是历史记录，不再代表当前实际分流。**Clash Verge 使用者需要重新粘贴本仓库最新版全局扩展脚本，刷新并重新激活订阅**。微软 Rewards 的市场资格不取决于代理节点。

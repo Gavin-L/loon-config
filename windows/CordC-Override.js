@@ -1,7 +1,7 @@
 /**
  * CordC (Mihomo) configuration override script, adapted from the existing tested Clash Verge version.
  * Public, no subscriptions or credentials. Compatible with active profiles.
- * 2026-11-11: unify provider Microsoft GeoSite with our HK group.
+ * 2026-11-11: unify provider Microsoft GeoSite with our US group.
  * CordC runtime support must be checked in-app before replacing Clash Verge.
  * TikTok traffic uses Singapore auto regional pool (TikTok-TW is legacy file name).
  * Paste into CordC Settings > Advanced > Script editor; associate with active profile when required.
@@ -93,7 +93,7 @@ const main = (config) => {
   var routes=[
     ["Ads-Reject","REJECT"],
     ["Finance-Direct","DIRECT"],["Apple-Direct","DIRECT"],
-    ["Microsoft-HK",groupName("HK")],
+    ["Microsoft-US",groupName("US")],
     ["YouTube-HK",groupName("HK")],
     ["AI-JP",groupName("JP")],
     ["Google-US",groupName("US")],
@@ -107,6 +107,7 @@ const main = (config) => {
     ["Other-HK",groupName("HK")]
   ];
   config["rule-providers"]=config["rule-providers"] || {};
+  delete config["rule-providers"]["LoonWin-Microsoft-HK"]; // legacy label
   var ours=[];
   routes.forEach(function(pair){
     var key=prefix+pair[0];
@@ -126,17 +127,17 @@ const main = (config) => {
     "DOMAIN-SUFFIX,upwork.net,DIRECT",
     "DOMAIN-SUFFIX,labelbox.com,DIRECT",
     "DOMAIN-SUFFIX,alignerr.com,DIRECT",
-    "DOMAIN-SUFFIX,windowsupdate.com,DIRECT",
-    "DOMAIN-SUFFIX,delivery.mp.microsoft.com,DIRECT",
-    "DOMAIN-SUFFIX,update.microsoft.com,DIRECT",
-    "DOMAIN-SUFFIX,download.windowsupdate.com,DIRECT",
-    "DOMAIN-SUFFIX,adl.windows.com,DIRECT",
-    "DOMAIN-SUFFIX,emdl.ws.microsoft.com,DIRECT",
-    "DOMAIN,download.microsoft.com,DIRECT",
-    "DOMAIN,officecdn.microsoft.com,DIRECT",
-    "DOMAIN-SUFFIX,download.visualstudio.microsoft.com,DIRECT",
-    "DOMAIN-SUFFIX,msftconnecttest.com,DIRECT",
-    "DOMAIN-SUFFIX,msftncsi.com,DIRECT",
+    "DOMAIN-SUFFIX,windowsupdate.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,delivery.mp.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,update.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,download.windowsupdate.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,adl.windows.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,emdl.ws.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN,download.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN,officecdn.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,download.visualstudio.microsoft.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,msftconnecttest.com,LoonWin-US-AUTO",
+    "DOMAIN-SUFFIX,msftncsi.com,LoonWin-US-AUTO",
     "DOMAIN-SUFFIX,alipay.com,DIRECT",
     "DOMAIN-SUFFIX,tenpay.com,DIRECT",
     "DOMAIN-SUFFIX,icbc.com.cn,DIRECT",
@@ -152,9 +153,9 @@ const main = (config) => {
   }));
   ownRules.push("DOMAIN-SUFFIX,cn,DIRECT");
   ownRules.push("GEOIP,CN,DIRECT,no-resolve");
-  // Airport GeoSite/Microsoft rules are redirected to our Hong Kong auto-pool.
+  // Airport GeoSite/Microsoft rules are redirected to our US auto-pool.
   // Our custom rules stay first, so AI/ads/download exceptions keep their priority.
-  ownRules.push("GEOSITE,microsoft,"+groupName("HK"));
+  ownRules.push("GEOSITE,microsoft,"+groupName("US"));
   var originalRules=Array.isArray(config.rules)?config.rules:[];
   var otherRules=originalRules.filter(function(rule){
     if (typeof rule!=="string") return false;
@@ -163,7 +164,7 @@ const main = (config) => {
     if (/^GEOSITE,\s*microsoft\s*,/i.test(rule)) return false;
     return ownRules.indexOf(rule)<0;
   }).map(function(rule){
-    return rule.replace(/,(?:微软服务|微軟服務|Microsoft服务|Microsoft服務)\s*(?=,|$)/i, ","+groupName("HK"));
+    return rule.replace(/,(?:微软服务|微軟服務|Microsoft服务|Microsoft服務)\s*(?=,|$)/i, ","+groupName("US"));
   });
   config.rules=ownRules.concat(otherRules,["MATCH,"+groupName("HK")]);
   // Never touch subscription URLs, proxy definitions, DNS or user credentials.

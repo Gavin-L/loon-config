@@ -11,7 +11,7 @@
 1. 打开本目录的 `CordC-Override.js`，Raw 页面复制全文。
 2. CordC → 设置 → 高级 → 脚本，将默认模板替换为全文并保存；确认是否还需要在当前配置/订阅中启用这个脚本。
 3. 重新加载机场配置，观察是否出现 `LoonWin-HK-AUTO`, `LoonWin-JP-AUTO`, `LoonWin-US-AUTO` 等策略组。
-4. 用连接/日志验证 `bing.com`、`bingparachute.com` → 香港，`chatgpt.com` → 日本，国内域名 → DIRECT。
+4. 用连接/日志验证 `bing.com`、`bingparachute.com` → 美国，`chatgpt.com` → 日本，国内域名 → DIRECT。
 5. 检查 `rule-providers` 是否成功下载来自 `rules/*.list` 的域名规则。规则更新约 6 小时检查一次（CDN 缓存可能延迟）。
 6. 如果规则/策略组没有生成或客户端报错，恢复默认 `const main = (config) => { return config; }`，继续用 Clash Verge，不影响其订阅。
 
@@ -26,3 +26,7 @@
 TikTok 已改为 **新加坡**自动节点池 `LoonWin-SG-AUTO`，优先同地区低倍率节点；不可用时回退同地区备用节点。共享规则集的文件名 `TikTok-TW.list` 保持不变以兼容 Loon 原有订阅，但 **Windows 中实际策略已指向新加坡**。
 
 本次更新修改了 JavaScript 脚本，因此需要在客户端 **重新通过 URL 导入最新版脚本并重新加载配置**；单独刷新远程规则集不能变更策略组目标。后续只调整 TikTok 匹配域名时，可继续通过 `rules/TikTok-TW.list` 自动更新。
+
+## Microsoft 改走美国地区（2026-11-18）
+
+脚本已将微软/Bing/Rewards、原机场 GeoSite/microsoft 规则、Windows 更新及微软下载域名改走 `LoonWin-US-AUTO`。远程规则采用 `rules/Microsoft-US.list`，旧 HK 文件仍在，但不再被新版 CordC 脚本使用。**需要在 CordC 通过原 URL 重新导入最新版脚本并重新加载配置**。微软 Rewards 兑换市场与账号资格仍由微软按相关条款决定，不以代理出口自动变更。
